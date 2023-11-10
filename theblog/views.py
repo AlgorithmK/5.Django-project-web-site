@@ -4,9 +4,20 @@ from . models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.views import PasswordChangeView
+from .forms import PasswordChangingForm
 
 # def home(request):
 #     return render(request, 'home.html', {})
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangingForm
+    # form_class = PasswordChangeForm
+    success_url = reverse_lazy('password_success')
+    # success_url = reverse_lazy('home')
+
+def password_success(request):
+    return render(request, 'registration/password_success.html', {})
 
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))

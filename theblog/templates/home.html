@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>Post</h1>
-
-  <ul>
+  <h1>Posts</h1>
+  
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-10">
     {% for post in object_list %}
-      <li>
-        <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
-        - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
-        - {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}
-        <small>
-          {% if user.is_authenticated %}
-            {% if user.id == post.author.id %}
-              - <a href="{% url 'update_post' post.pk %}">Edit</a>
-              <a href="{% url 'delete_post' post.pk %}">Delete</a>
-            {% endif %}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          {% if post.header_image %}
+            <img src="{{ post.header_image.url }}" class="card-img-top mx-auto d-block img-fluid" alt="{{ post.title }}" style="width: 300px; height: 200px; object-fit: cover;">
+          {% else %}
+            <img src="{% static 'theblog/images/empty-photo.jpg' %}" class="card-img-top mx-auto d-block img-fluid" alt="Default Image" style="width: 300px; height: 200px; object-fit: cover;">
           {% endif %}
-        </small>
-        <br />
-        {{ post.snippet }}
-      </li>
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.snippet }}</p>
+            <p class="card-text">{{ post.category }}</p>
+              <small class="text-muted">
+                {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}
+              </small>
+            </p>
+            <a href="{% url 'article-detail' post.pk %}" class="btn btn-primary">Read More</a>
+            {% if user.is_authenticated %}
+              {% if user.id == post.author.id %}
+                <a href="{% url 'update_post' post.pk %}" class="btn btn-secondary">Edit</a>
+                <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger">Delete</a>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 {% endblock %}
+
+
+
+
+
 
 

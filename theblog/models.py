@@ -40,7 +40,7 @@ class Post(models.Model):
     body = RichTextField(blank=True, null=True)
     # body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
-    category = models.CharField(max_length=255, default='coding')
+    category = models.CharField(max_length=255, default='Vietnam')
     likes = models.ManyToManyField(User, related_name='blog_posts')
     snippet = models.CharField(max_length=255)
     

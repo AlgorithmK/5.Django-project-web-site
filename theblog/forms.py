@@ -2,6 +2,24 @@ from django import forms
 from .models import Post, Category
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import PasswordChangeForm
+from .models import Profile
+
+class ProfilePageForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('bio', 'profile_pic', 'website_url',
+                'facebook_url', 'twitter_url', 'instagram_url', 'pinterest_url')
+        widgets = {
+                'bio': forms.Textarea(attrs={'class':'form-control'}),
+                # 'profile_pic': forms.TextInput(attrs={'class':'form-control'}),
+                'website_url': forms.TextInput(attrs={'class':'form-control'}),
+                'facebook_url': forms.TextInput(attrs={'class':'form-control'}),
+                'twitter_url': forms.TextInput(attrs={'class':'form-control'}),
+                'instagram_url': forms.TextInput(attrs={'class':'form-control'}),
+                'pinterest_url': forms.TextInput(attrs={'class':'form-control'}),
+            }
+
+    
 # choices = [('coding', 'coding'), ('sports', 'sports'), ('entertainment', 'entertainment'),]
 choices = Category.objects.all().values_list('name', 'name')
 
@@ -13,7 +31,7 @@ for item in choices:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'title_tag', 'author', 'category', 'body', 'snippet')
+        fields = ('title', 'title_tag', 'author', 'category', 'body', 'snippet', 'header_image')
         
         widgets = {
             'title': forms.TextInput(attrs={'class':'form-control'}),

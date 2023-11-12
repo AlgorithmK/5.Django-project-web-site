@@ -34,10 +34,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'category-list' %}">Categories</a>
                     </li>
-
-
-
                     {% endif %}
+
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
@@ -46,10 +44,21 @@
                         <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
                     </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Settings</a></li>
+                            {% if user.profile.id %}
+                                <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Edit Profile Page</a></li>
+                                <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">Show Profile Page</a></li>
+                            {% else %}
+                                <li><a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile Page</a></li>
+                            {% endif %}
+                                
+                        </ul>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>

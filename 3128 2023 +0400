@@ -1,0 +1,62 @@
+[33mcommit 504dad12f50c2fd4fa30b106dc9fd9ea6cb9f00f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Aleks <mailbox9270@gmail.com>
+Date:   Mon Nov 13 17:22:55 2023 +0400
+
+    Update README.md
+    
+    Instruction and description added
+
+[33mcommit a1a1a5eedb6beda44ba548833b66799aadeef64f[m
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Mon Nov 13 00:17:17 2023 +0400
+
+    Bug with Posts Cards fixed
+
+[33mcommit ee9b69048d8725bce99eb690bb59e14d17e4fcf6[m
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Sun Nov 12 21:52:22 2023 +0400
+
+    Project updates: 1.Adding new forms of the posts. 2.Created drop-down button with Profile Settings.
+
+[33mcommit 360a17ef5736511ac5b52ff622115393bd335785[m
+Merge: fc6d92a b63026c
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Sun Nov 12 13:36:39 2023 +0400
+
+    Merge branch 'new_features'
+
+[33mcommit fc6d92a427c1d7177f31d51aee3e5206939c6cdd[m
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Sun Nov 12 13:33:55 2023 +0400
+
+    Commit for testing merging
+
+[33mcommit b63026c08fbfa4c3d33ab9c1d55cff97eda558f6[m[33m ([m[1;31morigin/new_features[m[33m)[m
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Sun Nov 12 13:17:31 2023 +0400
+
+    1.New branch creation.2.New features in project:-Comment section, -Images downloading, -Profile page
+
+[33mcommit 43b81e7a0990ba5945257e62014e77945eaea633[m
+Author: AlgorithmKs <mailbox9270@gmail.com>
+Date:   Fri Nov 10 21:48:39 2023 +0400
+
+    Added Pasword changing and profile editing opportunity
+
+[33mcommit 62907566afc0e00f3a39394cff6abeec5b1d8f03[m
+Author: AlgorithmK <mailbox9270@gmail.com>
+Date:   Fri Nov 10 17:24:12 2023 +0400
+
+    Adding new features: Login, Logout, User profile, Registration, ckeditor
+
+[33mcommit 2bcab7dea26966edf7d63558022a3cc8379365c6[m
+Author: Aleks <mailbox9270@gmail.com>
+Date:   Wed Nov 8 15:31:28 2023 +0400
+
+    Project creation
+
+[33mcommit 63cec6b596fb622aca96e3adabec3cfa6bf29ee2[m
+Author: Aleks <mailbox9270@gmail.com>
+Date:   Wed Nov 8 15:12:21 2023 +0400
+
+    Initial commit

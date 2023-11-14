@@ -5,7 +5,7 @@ from .forms import PostForm, EditForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.views import PasswordChangeView
-from .forms import PasswordChangingForm, ProfilePageForm
+from .forms import PasswordChangingForm, ProfilePageForm, EditProfilePageForm
 from django.views.generic import DetailView
 from theblog.models import Profile, Comment
 from django.views import generic
@@ -23,9 +23,10 @@ class CreateProfilePageView(CreateView):
 
 class EditProfilePageView(generic.UpdateView):
     model = Profile
+    form_class = EditProfilePageForm
     template_name = 'registration/edit_profile_page.html'
-    fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pinterest_url']
-    success_url = reverse_lazy('home')
+    # fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pinterest_url']
+    # success_url = reverse_lazy('home')
 
 
 class ShowProfilePageView(DetailView):
